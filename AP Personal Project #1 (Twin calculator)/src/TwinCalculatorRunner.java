@@ -29,7 +29,7 @@ public class TwinCalculatorRunner
 			}
 		if(User.getConfirmationYesOrNoUniform() == "Yes")
 			{
-			
+			User.askForNumberOfTopUniformColors();
 			}
 		if(User.getConfirmationYesOrNoUniform() == "No")
 			{

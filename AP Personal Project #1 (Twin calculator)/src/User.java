@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class User
 	{
 	private static String userSchool, confirmationYesOrNoNumbers, confirmationYesOrNoUniform;
-	private static int freshNumber, sophNumber, juniNumber, senioNumber, freshAbs, sophAbs, juniAbs, senioAbs;
+	private static int freshNumber, sophNumber, juniNumber, senioNumber, freshAbs, sophAbs, juniAbs, senioAbs, uniformTopColors;
 	private static boolean acceptNumbers = false;
 	private static boolean acceptableResponse = false;
 
@@ -147,7 +147,7 @@ public class User
 	public static void askForSchoolName()
 		{
 		System.out.println();
-		System.out.println("First off, what is the name of your school?");
+		System.out.println("What is the name of your school?");
 		Scanner inputBlock = new Scanner (System.in);
 		userSchool = inputBlock.nextLine();
 		}
@@ -244,6 +244,7 @@ public class User
 			case "yes":
 			case "Yes":
 				{
+				System.out.println();
 				System.out.println("OK, let's continue.");
 				acceptNumbers = true;
 				}
@@ -251,6 +252,7 @@ public class User
 			case "no":
 			case "No":
 				{
+				System.out.println();
 				System.out.println("OK, we'll go back and try again.");
 				System.out.println();
 				acceptNumbers = false;
@@ -258,6 +260,7 @@ public class User
 				break;
 			default:
 				{
+				System.out.println();
 				System.out.println("I'm sorry, but \"" + confirmationYesOrNoNumbers + "\" is not a valid answer. Please respond with a yes or a no.");
 				System.out.println("Please resubmit your answers.");
 				acceptNumbers = false;
@@ -282,29 +285,43 @@ public class User
 			case "yes":
 			case "Yes":
 				{
-				confirmationYesOrNoUniform = "Yes";
-				System.out.println("OK, let's continue.");
 				System.out.println();
+				confirmationYesOrNoUniform = "Yes";
 				acceptableResponse = true;
 				}
 				break;
 			case "no":
 			case "No":
 				{
-				confirmationYesOrNoUniform = "No";
-				System.out.println("OK, let's continue.");
 				System.out.println();
+				confirmationYesOrNoUniform = "No";
 				acceptableResponse = true;
 				}
 				break;
 			default:
 				{
+				System.out.println();
 				System.out.println("I'm sorry, but \"" + confirmationYesOrNoUniform + "\" is not a valid answer. Please respond with a yes or a no.");
 				System.out.println("Please resubmit your answer.");
-				System.out.println();
 				acceptableResponse = false;
 				}
 				break;
+			}
+		}
+	
+	public static void askForNumberOfTopUniformColors()
+		{
+		System.out.println();
+		System.out.println("How many color options do you have for the uniform tops?");
+		Scanner inputBlock = new Scanner (System.in);
+		uniformTopColors = inputBlock.nextInt();
+		}
+	
+	public static void askForUniformTopColors()
+		{
+		for(int i = 0; i < uniformTopColors; i++)
+			{
+			
 			}
 		}
 	
