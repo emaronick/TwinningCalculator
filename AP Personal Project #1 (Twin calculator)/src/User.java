@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-
 public class User
 	{
 	private static String userSchool, confirmationYesOrNoNumbers, confirmationYesOrNoUniform;
-	private static int freshNumber, sophNumber, juniNumber, senioNumber, freshAbs, sophAbs, juniAbs, senioAbs, uniformTopColors;
+	private static int freshNumber, sophNumber, juniNumber, senioNumber, freshAbs, sophAbs, juniAbs, senioAbs, numberOfUniformTopColors, numberOfUniformBottomColors;
 	private static boolean acceptNumbers = false;
 	private static boolean acceptableResponse = false;
 
@@ -118,6 +117,26 @@ public class User
 		User.senioAbs = senioAbs;
 		}
 
+	public static int getNumberOfUniformTopColors()
+		{
+		return numberOfUniformTopColors;
+		}
+
+	public static void setNumberOfUniformTopColors(int numberOfUniformTopColors)
+		{
+		User.numberOfUniformTopColors = numberOfUniformTopColors;
+		}
+
+	public static int getNumberOfUniformBottomColors()
+		{
+		return numberOfUniformBottomColors;
+		}
+
+	public static void setNumberOfUniformBottomColors(int numberOfUniformBottomColors)
+		{
+		User.numberOfUniformBottomColors = numberOfUniformBottomColors;
+		}
+
 	public static boolean isAcceptNumbers()
 		{
 		return acceptNumbers;
@@ -143,79 +162,79 @@ public class User
 		System.out.println("Want to know your chance of \"twinning\" with someone else at your school today?");
 		System.out.println("Obviously!");
 		}
-	
+
 	public static void askForSchoolName()
 		{
 		System.out.println();
 		System.out.println("What is the name of your school?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		userSchool = inputBlock.nextLine();
 		}
-	
+
 	public static void askForNumberOfFreshmen()
 		{
 		System.out.println();
 		System.out.println("How many freshmen attend your school?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		freshNumber = inputBlock.nextInt();
 		}
-	
+
 	public static void askForNumberOfSophomores()
 		{
 		System.out.println();
 		System.out.println("How many sophomores?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		sophNumber = inputBlock.nextInt();
 		}
-	
+
 	public static void askForNumberOfJuniors()
 		{
 		System.out.println();
 		System.out.println("How many juniors?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		juniNumber = inputBlock.nextInt();
 		}
-	
+
 	public static void askForNumberOfSeniors()
 		{
 		System.out.println();
 		System.out.println("How many seniors?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		senioNumber = inputBlock.nextInt();
 		}
-	
+
 	public static void askForAbsentFreshmen()
 		{
 		System.out.println();
 		System.out.println("How many freshmen are absent today?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		freshAbs = inputBlock.nextInt();
 		}
-	
+
 	public static void askForAbsentSophomores()
 		{
 		System.out.println();
 		System.out.println("How many sophomores?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		sophAbs = inputBlock.nextInt();
 		}
-	
+
 	public static void askForAbsentJuniors()
 		{
 		System.out.println();
 		System.out.println("How many juniors?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		juniAbs = inputBlock.nextInt();
 		}
-	
+
 	public static void askForAbsentSeniors()
 		{
 		System.out.println();
 		System.out.println("How many seniors?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		senioAbs = inputBlock.nextInt();
 		}
-	
+
 	public static void reportInputValuesAndCalculationResults()
 		{
 		System.out.println();
@@ -227,19 +246,18 @@ public class User
 		System.out.println("Assuming the above numbers are correct, that means that there are " + Attendance.getTotalStudents() + " total students at your school.");
 		System.out.println("This also means that there are " + Attendance.getTotalPresent() + " students in school today.");
 		}
-	
+
 	public static void askToCheckIfNumbersAreCorrect()
 		{
 		System.out.println();
 		System.out.println("Are these numbers correct?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		confirmationYesOrNoNumbers = inputBlock.nextLine();
 		}
-	
+
 	public static void reactToNumberCheck()
 		{
-		System.out.println();
-		switch(confirmationYesOrNoNumbers)
+		switch (confirmationYesOrNoNumbers)
 			{
 			case "yes":
 			case "Yes":
@@ -268,24 +286,22 @@ public class User
 				break;
 			}
 		}
-	
+
 	public static void askAboutExistanceOfUniforms()
 		{
 		System.out.println();
 		System.out.println("Are students at your school required to wear uniforms?");
-		Scanner inputBlock = new Scanner (System.in);
+		Scanner inputBlock = new Scanner(System.in);
 		confirmationYesOrNoUniform = inputBlock.nextLine();
 		}
-	
+
 	public static void reactToUniformQuestion()
 		{
-		System.out.println();
-		switch(confirmationYesOrNoUniform)
+		switch (confirmationYesOrNoUniform)
 			{
 			case "yes":
 			case "Yes":
 				{
-				System.out.println();
 				confirmationYesOrNoUniform = "Yes";
 				acceptableResponse = true;
 				}
@@ -293,7 +309,6 @@ public class User
 			case "no":
 			case "No":
 				{
-				System.out.println();
 				confirmationYesOrNoUniform = "No";
 				acceptableResponse = true;
 				}
@@ -308,21 +323,31 @@ public class User
 				break;
 			}
 		}
-	
+
 	public static void askForNumberOfTopUniformColors()
 		{
 		System.out.println();
 		System.out.println("How many color options do you have for the uniform tops?");
-		Scanner inputBlock = new Scanner (System.in);
-		uniformTopColors = inputBlock.nextInt();
+		Scanner inputBlock = new Scanner(System.in);
+		numberOfUniformTopColors = inputBlock.nextInt();
 		}
-	
-	public static void askForUniformTopColors()
+
+	public static void askForNumberOfBottomUiformColors()
 		{
-		for(int i = 0; i < uniformTopColors; i++)
-			{
-			
-			}
+		System.out.println();
+		System.out.println("How many color options do you have for the uniform bottoms?");
+		Scanner inputBlock = new Scanner(System.in);
+		numberOfUniformBottomColors = inputBlock.nextInt();
 		}
 	
+	public static void announceDisclaimer()
+		{
+		System.out.println();
+		System.out.println("We hope you have enjoyed this application.");
+		System.out.println("Please remember that the numbers given in this program are probabilities, and not nessisarily accurate representations of the number of people you will be twinning with.");
+		System.out.println("This program was made possible by contrabutions to your local MHS station from viewers like you.");
+		System.out.println("Thank you.");
+		System.out.println();
+		System.out.println("The end.");
+		}
 	}

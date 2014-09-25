@@ -1,8 +1,8 @@
-
 public class Attendance
 	{
-	private static int freshPresent, sophPresent, juniPresent, senioPresent, totalPresent, totalStudents;
-	
+	private static int freshPresent, sophPresent, juniPresent, senioPresent,
+			totalPresent, totalStudents;
+
 	public static void calculatePresentStudents()
 		{
 		freshPresent = User.getFreshNumber() - User.getFreshAbs();
@@ -10,7 +10,7 @@ public class Attendance
 		juniPresent = User.getJuniNumber() - User.getJuniAbs();
 		senioPresent = User.getSenioNumber() - User.getSenioAbs();
 		}
-	
+
 	public static void calculateTotalPresentStudentsAndTotalOverallStudents()
 		{
 		totalPresent = freshPresent + sophPresent + juniPresent + senioPresent;
