@@ -11,6 +11,7 @@ public class Attendance
 		senioPresent = User.getSenioNumber() - User.getSenioAbs();
 		}
 
+	
 	public static void calculateTotalPresentStudentsAndTotalOverallStudents()
 		{
 		totalPresent = freshPresent + sophPresent + juniPresent + senioPresent;

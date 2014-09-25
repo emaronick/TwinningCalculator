@@ -154,6 +154,7 @@ public class Clothes
 		System.out.println("We will assume that there are ten colors for both top and bottom because there are 7 colors in the rainbow, plus black, white, and brown.");
 		}
 	
+	
 	public static void calculateTwinningOddsWithoutUniforms()
 		{
 		System.out.println("This gives you a total of 100 possible outfit combinations at your school.");

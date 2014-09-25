@@ -344,7 +344,7 @@ public class User
 		{
 		System.out.println();
 		System.out.println("We hope you have enjoyed this application.");
-		System.out.println("Please remember that the numbers given in this program are probabilities, and not nessisarily accurate representations of the number of people you will be twinning with.");
+		System.out.println("Please remember that the numbers given in this program are probabilities, and not necessarily accurate representations of the number of people you will be twinning with.");
 		System.out.println("This program was made possible by contrabutions to your local MHS station from viewers like you.");
 		System.out.println("Thank you.");
 		System.out.println();
